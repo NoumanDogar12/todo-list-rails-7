@@ -1,0 +1,6 @@
+<div class="p-2 my-2 rounded-lg <%= item.completed ? "bg-green-500" : "bg-gray-200"  %> flex justify-between items-center w-full" id="<%= dom_id(item) %>">
+  <span><%= item.description %></span>
+  <%= check_box_tag "completed", true, item.completed, id: dom_id(item, :checkbox), class: "size-10 rounded-full text-green-600 focus:ring-0",
+        data: { controller: "checkbox", action: "change->checkbox#update", checkbox_url_value: url_for([item.todo, item]) }
+  %>
+</div>
