@@ -1,0 +1,3 @@
+<%= turbo_stream.append("todo-items", partial: "todos/todo_item", locals: { item: @todo_item }) %>
+<%= turbo_stream.update(:new_todo_item, partial: "form", locals: { todo_item: @todo.items.new }) %>
+<%= turbo_stream.replace(:counter, partial: "todos/items_counter", locals: { todo: @todo.reload } ) %>
